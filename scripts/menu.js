@@ -1,6 +1,7 @@
 ﻿// Link
 
-const link = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT4ju0tv2OnB4VHdEQ26HU4u14WkrjQRzW1yM6aqk1dzR4rAEwnNTDTI49K_lzju_-kWQEL21Euj8wJ/pub?gid=0&single=true&output=csv";
+const menuLink = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT4ju0tv2OnB4VHdEQ26HU4u14WkrjQRzW1yM6aqk1dzR4rAEwnNTDTI49K_lzju_-kWQEL21Euj8wJ/pub?gid=0&output=csv"; // Sheet1 (gid=0)
+const dataLink = "https://docs.google.com/spreadsheets/d/e/2PACX-1vT4ju0tv2OnB4VHdEQ26HU4u14WkrjQRzW1yM6aqk1dzR4rAEwnNTDTI49K_lzju_-kWQEL21Euj8wJ/pub?gid=253754463&output=csv";
 
 // Elements
 
@@ -9,12 +10,11 @@ const tuesdayMenuLabel = document.querySelector("#tuesday-div").querySelector("#
 const wednesdayMenuLabel = document.querySelector("#wednesday-div").querySelector("#wednesday-menu");
 const thursdayMenuLabel = document.querySelector("#thursday-div").querySelector("#thursday-menu");
 const fridayMenuLabel = document.querySelector("#friday-div").querySelector("#friday-menu");
+const dateLabel = document.querySelector("#info3");
 
 // Code
 
-// return `${day.trim()}: ${menuItems}`;
-
-fetch(link)
+fetch(menuLink)
     .then(res => res.text())
     .then(csv => {
         const rows = csv.split('\n').slice(1);
@@ -48,4 +48,14 @@ fetch(link)
                 default: break;
             }
         });
+    });
+
+fetch(dataLink)
+    .then(res => res.text())
+    .then(csv => {
+        const rows = csv.split("\n");
+        const date = rows[1].split(',')[0].trim();
+        const split = date.split(" ");
+
+        dateLabel.textContent = `*Informasi ini terakhir di update pada ${split[0]} dan hanya valid sampai dengan ${split[1]}.`;
     });
