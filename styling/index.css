@@ -1,9 +1,12 @@
-﻿body {
+﻿body, h1, h2, footer, a {
+    font-family: "Domine", serif !important;
+}
+
+body {
     background: rgb(147, 112, 219, 12.5%);
 }
 
 h1 {
-    font-family: "Domine", serif;
     font-weight: 700;
     font-style: normal;
     font-size: clamp(1.5rem, 3vw, 2rem);
@@ -13,7 +16,6 @@ h1 {
 }
 
 h2 {
-    font-family: "Domine", serif;
     font-weight: 600;
     font-style: normal;
     font-size: clamp(1.2rem, 2.5vw, 1.7rem);
@@ -24,7 +26,6 @@ h2 {
 }
 
 footer {
-    font-family: "Domine", serif;
     font-weight: 500;
     font-style: normal;
     font-size: clamp(0.9rem, 2vw, 1.2rem);
@@ -34,7 +35,6 @@ footer {
 }
 
 a {
-    font-family: "Domine", serif;
     font-weight: 500;
     font-style: normal;
     font-size: clamp(0.675rem, 1.5vw, 0.9rem);
@@ -44,9 +44,8 @@ a {
 }
 
 #laris-manis-icon {
-    height: clamp(1.8rem, 3.75vw, 2.55rem);
+    height: clamp(1.2rem, 4vw, 1.8rem);
     width: auto;
-    vertical-align: middle;
 }
 
 #main-div {
@@ -63,12 +62,12 @@ a {
 #info3 {
     width: 80%;
     max-width: 550px;
-    margin: 0 auto;
+    box-sizing: border-box;
     display: block;
-    font-weight: 600;
+    font-size: clamp(0.7rem, 3vw, 0.9rem);
     text-align: center;
-    color: mediumpurple;
-    padding: 0.5em 0;
+    line-height: 1.4;
+    margin: 0.5rem auto;
 }
 
 #main-div>#whatsapp-icon
@@ -77,21 +76,25 @@ a {
     color: inherit;
 }
 
-@media (max-width: 480px) {
-    #main-div {
-        width: 90%;
-        padding: 10px;
-    }
-
+@media (max-width: 768px) {
     h1 {
-        font-size: clamp(1.3rem, 5vw, 1.7rem);
+        font-size: clamp(1.3rem, 6vw, 1.8rem);
+        margin: 0.3em 0;
     }
 
     h2 {
-        font-size: clamp(1.1rem, 4vw, 1.5rem);
+        font-size: clamp(1rem, 5vw, 1.5rem);
     }
 
-    footer {
-        font-size: clamp(0.8rem, 3.5vw, 1.1rem);
+    footer, #price, #transaction {
+        font-size: clamp(0.8rem, 4vw, 1.1rem);
+    }
+
+    a {
+        font-size: clamp(0.6rem, 3.5vw, 0.8rem);
+    }
+
+    #whatsapp-icon {
+        font-size: 1em !important;
     }
 }
