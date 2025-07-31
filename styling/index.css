@@ -66,6 +66,7 @@ a {
     display: block;
     font-size: clamp(0.7rem, 3vw, 0.9rem);
     text-align: center;
+    color: mediumpurple;
     line-height: 1.4;
     margin: 0.5rem auto;
 }

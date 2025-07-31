@@ -57,5 +57,5 @@ fetch(dataLink)
         const date = rows[1].split(',')[0].trim();
         const split = date.split(" ");
 
-        dateLabel.textContent = `*Informasi ini terakhir di update pada ${split[0]} dan hanya valid sampai dengan ${split[1]}.`;
+        dateLabel.innerHTML = `<i>*Informasi ini terakhir di update pada ${split[0]} dan hanya valid sampai dengan ${split[1]}.</i>`;
     });
